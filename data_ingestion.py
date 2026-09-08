@@ -25,7 +25,7 @@ logging.basicConfig(level=logging.INFO, format="%(asctime)s %(levelname)s %(mess
 log = logging.getLogger(__name__)
 
 BASE_URL = "https://reports-public.ieso.ca/public"
-RAW_DIR = Path("data/raw")
+RAW_DIR = Path(__file__).resolve().parent.parent / "data/raw"
 RAW_DIR.mkdir(parents=True, exist_ok=True)
 
 HOEP_RETIREMENT_DATE = date(2025, 4, 30)  # Last day HOEP was published
