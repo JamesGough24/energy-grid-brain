@@ -73,7 +73,7 @@ def fetch_demand_history(start_year: int = 2002, end_year: int = 2025) -> pd.Dat
 # ---------------------------------------------------------------------------
 
 def fetch_hoep_history(start_year: int = 2002, end_year: int = 2025) -> pd.DataFrame:
-    """Downloads yearly legacy HOEP CSVs."""
+    """Downloads yearly legacy HOEP CSVs"""
     frames = []
 
     for year in range(start_year, end_year + 1):
