@@ -15,7 +15,11 @@ An end-to-end data science pipeline built on 23 years (2002–2025) of real Onta
 
 ## Motivation
 
-Ontario's grid operator solves a version of this problem every day: forecast demand and price, then decide how to operate the grid economically and reliably under real uncertainty. This project focuses that same forecast → decision → risk-quantification pipeline onto a single concrete decision — when a hypothetical grid-scale battery should charge or discharge — because it forces engagement with a harder, more senior question than "how accurate is my model": once you have a forecast, what is the actual right decision to make, and how much should you trust it?
+While visiting rural southern Ontario, I was struck by how much infrastructure was quietly doing its job in the background. There were wind turbines dotting fields, transmission lines stretching across long stretches of nothing, all built to serve places with a handful of homes just as reliably as it serves a city of millions. Canada is enormous, and the idea that one interconnected system has to serve both a farmhouse and downtown Toronto, at the same standard of reliability, all the time, stuck with me.
+
+One of the nights during that trip, the power went out without a storm or obvious cause. It got me thinking about something I'd genuinely never considered before: electricity is a business, with real costs, real supply constraints, and real decisions being made every hour about how much to generate and at what price — but it's also invisible infrastructure in the truest sense. Nobody thinks about the grid when it works. The moment it doesn't, it's the only thing anyone can think about.
+
+That curiosity turned into this project: an attempt to actually engage with the forecasting and decision-making problems a real grid participant faces; predicting demand, predicting price, and making a real economic decision (battery arbitrage) under real uncertainty. The simulation piece in particular was intentional as I specifically wanted hands-on experience building something that tests its own assumptions statistically against real-world variance, rather than trusting a single backtested result at face value.
 
 ---
 
