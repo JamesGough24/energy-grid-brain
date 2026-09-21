@@ -9,7 +9,11 @@ Both are published as static yearly bulk CSV files (not day-by-day reports),
 so they are NOT subject to IESO's 90-day rolling retention policy that
 affects the newer post-MRP reports like DA-OZP
 
-Also downloads temperature data from 
+Also downloads hourly temperature data from Environment Canada, scoped to the same timeframe as
+HOEP data (2002 - April 30, 2025). Weather station used will be Toronto Pearson Airport. Although
+weather will vary massively across the province, using Toronto Pearson will cover the temperature
+in the province's biggest power usage hub, while still being a decent indicator of conditions 
+elsewhere.
 
 """
 
@@ -33,19 +37,14 @@ RAW_DIR.mkdir(parents=True, exist_ok=True)
 HOEP_RETIREMENT_DATE = date(2025, 4, 30)  # Last day HOEP was published
 
 # Station ID for Toronto Pearson Airport, acting as a proxy to represent temperature in Ontario.
-# Although weather will vary massively across the province, using Toronto will perfectly represent
-# the temperature in the province's biggest power usage hub, while still being a decent indicator
-# of conditions elsewhere
 WEATHER_STATION_ID_FIRST = 5097
 WEATHER_STATION_ID_SECOND = 51459
-# WEATHER_STATION_CHANGEOVER = 
 
 HEADERS = {"User-Agent": "ontario-grid-brain-student-project/1.0"}
 REQUEST_DELAY_SECONDS = 0.3  # delay between IESO requests
 WEATHER_REQUEST_DELAY_SECONDS = 2.0  # delay between ECCC requests
 MAX_RETRIES = 4
 RETRY_BACKOFF_BASE = 3.0  # seconds; doubles each retry (3s, 6s, 12s, 24s)
-
 
 # ---------------------------------------------------------------------------
 # Demand (2002-present, single continuous series)
